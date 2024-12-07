@@ -1,0 +1,15 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int solution(int a, int b) {
+    string ab = to_string(a) + to_string(b);
+    string ba = to_string(b) + to_string(a);
+    return max(stoi(ab), stoi(ba));
+}
+
+int main() {
+    cout << solution(9, 91) << endl; // 출력: 991
+    cout << solution(89, 8) << endl; // 출력: 898
+    return 0;
+}

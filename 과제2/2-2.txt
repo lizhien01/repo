@@ -1,0 +1,15 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int solution(string my_string, string is_prefix) {
+    return my_string.substr(0, is_prefix.size()) == is_prefix ? 1 : 0;
+}
+
+int main() {
+    cout << solution("banana", "ban") << endl; // 출력: 1
+    cout << solution("banana", "nan") << endl; // 출력: 0
+    cout << solution("banana", "abcd") << endl; // 출력: 0
+    cout << solution("banana", "bananan") << endl; // 출력: 0
+    return 0;
+}

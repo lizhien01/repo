@@ -1,0 +1,17 @@
+class Solution {
+    public int solution(int a, int b) {
+        // a ⊕ b를 계산
+        int ab = Integer.parseInt("" + a + b);
+        // b ⊕ a를 계산
+        int ba = Integer.parseInt("" + b + a);
+        // 둘 중 더 큰 값을 반환
+        return Math.max(ab, ba);
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        // 테스트 케이스 실행
+        System.out.println(solution.solution(9, 91)); // 출력: 991
+        System.out.println(solution.solution(89, 8)); // 출력: 898
+    }
+}

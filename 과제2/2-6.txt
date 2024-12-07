@@ -1,0 +1,29 @@
+class Solution {
+    public int solution(String s) {
+        String[] tokens = s.split(" "); // 문자열을 공백으로 분리
+        int sum = 0; // 총합
+        int lastNumber = 0; // 바로 이전에 더한 숫자 저장
+
+        for (String token : tokens) {
+            if (token.equals("Z")) {
+                sum -= lastNumber; // Z일 경우 바로 이전 숫자 제거
+            } else {
+                int number = Integer.parseInt(token); // 문자열을 숫자로 변환
+                sum += number; // 숫자를 더함
+                lastNumber = number; // 마지막 숫자 갱신
+            }
+        }
+
+        return sum; // 최종 합계 반환
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        // 테스트 예제
+        System.out.println(solution.solution("1 2 Z 3")); // 출력: 4
+        System.out.println(solution.solution("10 20 30 40")); // 출력: 100
+        System.out.println(solution.solution("10 Z 20 Z 1")); // 출력: 1
+        System.out.println(solution.solution("10 Z 20 Z")); // 출력: 0
+        System.out.println(solution.solution("-1 -2 -3 Z")); // 출력: -3
+    }
+}
